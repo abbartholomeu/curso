@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faça seu App Grátis na Nuvem</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+	header {
+      background-color: #8e4547;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .container {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .section h2 {
+      color: #8e4547;
+      margin-bottom: 1rem;
+    }
+    .benefits, .curriculum, .testimonials {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .benefit, .module, .testimonial {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .cta a {
+      background-color: #8e4547;
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 768px) {
+      .benefits, .curriculum, .testimonials {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .benefit, .module, .testimonial {
+        flex: 1 1 calc(33.333% - 1rem);
+      }
+	   .instructor-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Faça seu App Grátis na Nuvem</h1>
+    <p>Crie aplicativos sem codificar usando Oracle APEX</p>
+	<p>por: <strong>André Bartholomeu</strong></p>
+	<p>Engenheiro da Computação</p>
+	<img src="barth_treinamentos.png" alt="Instrutor André Bartholomeu" class="instructor-img">
+  </header>
+
+  <div class="container">
+    <section class="section">
+      <h2>Por que este curso é para você?</h2>
+      <div class="benefits">
+        <div class="benefit">
+          <h3>Sem necessidade de programação</h3>
+          <p>Aprenda a criar aplicativos funcionais sem escrever uma linha de código.</p>
+        </div>
+        <div class="benefit">
+          <h3>100% na nuvem</h3>
+          <p>Desenvolva e publique seus aplicativos diretamente na nuvem com a Oracle.</p>
+        </div>
+        <div class="benefit">
+          <h3>Gratuito</h3>
+          <p>Utilize ferramentas gratuitas fornecidas pela Oracle para criar seus aplicativos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>O que você vai aprender</h2>
+      <div class="curriculum">
+        <div class="module">
+          <h3>Módulo 1: Introdução ao Oracle APEX</h3>
+          <p>Entenda o que é o Oracle APEX e como ele pode ajudar no desenvolvimento de aplicativos.</p>
+        </div>
+        <div class="module">
+          <h3>Módulo 2: Criando sua conta gratuita</h3>
+          <p>Passo a passo para criar sua conta gratuita na Oracle Cloud e acessar o APEX.</p>
+        </div>
+        <div class="module">
+          <h3>Módulo 3: Desenvolvendo seu primeiro aplicativo</h3>
+          <p>Aprenda a criar um aplicativo de gestão de clientes e vendas com funcionalidades práticas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Depoimentos</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <p>"Consegui criar meu próprio aplicativo para gerenciar minhas vendas sem saber programar!"</p>
+          <p><strong>— João Crisanto Ribeiro (Empresário)</strong></p>
+        </div>
+        <div class="testimonial">
+          <p>"O curso é direto ao ponto e muito fácil de acompanhar. Recomendo!"</p>
+          <p><strong>— Salomé Oliveira Santos (Autônoma)</strong></p>
+        </div>
+        <div class="testimonial">
+          <p>"Agora tenho um aplicativo funcional para meu negócio, tudo graças a este curso."</p>
+          <p><strong>— Pedro Araminta Valcácio (Administrador de Empresas)</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta">
+      <a href="https://www.udemy.com/course/oraclenocode/?referralCode=7C0E8FB7F9A3F2015C97">Inscreva-se agora</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Curso Oracle APEX. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
