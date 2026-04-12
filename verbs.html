@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>100 verbos mais úteis em inglês</title>
+  <meta name="description" content="Lista responsiva com 100 verbos em inglês organizados por grupos: present, past e past participle." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #121a31;
+      --card: rgba(255,255,255,0.08);
+      --card-border: rgba(255,255,255,0.12);
+      --text: #edf2ff;
+      --muted: #b8c4e0;
+      --accent: #7cc7ff;
+      --accent-2: #9df0d2;
+      --shadow: 0 10px 30px rgba(0,0,0,0.20);
+      --radius: 20px;
+      --radius-sm: 14px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(124,199,255,0.16), transparent 26%),
+        radial-gradient(circle at top left, rgba(157,240,210,0.14), transparent 28%),
+        linear-gradient(180deg, #0a1021 0%, #0d1530 100%);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 24px), var(--max));
+      margin: 0 auto;
+      padding: 24px 0 40px;
+    }
+
+    .hero {
+      padding: 18px 0 10px;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.06));
+      border: 1px solid var(--card-border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(124,199,255,0.12);
+      border: 1px solid rgba(124,199,255,0.22);
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    h1 {
+      margin: 14px 0 10px;
+      font-size: clamp(1.9rem, 4vw, 3.2rem);
+      line-height: 1.08;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.8vw, 1.08rem);
+      max-width: 76ch;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .meta-item {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+    }
+
+    .meta-item strong {
+      display: block;
+      font-size: 1.08rem;
+      margin-bottom: 3px;
+    }
+
+    .meta-item span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin: 18px 0 22px;
+    }
+
+    .search {
+      flex: 1 1 280px;
+      position: relative;
+    }
+
+    .search input {
+      width: 100%;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 14px 16px 14px 44px;
+      outline: none;
+      font-size: 1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .search input::placeholder {
+      color: #9aa7c6;
+    }
+
+    .search svg {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.07);
+      padding: 11px 14px;
+      border-radius: 999px;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+
+    .chip:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.11);
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.06));
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 4px;
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .count {
+      white-space: nowrap;
+      border: 1px solid rgba(157,240,210,0.24);
+      background: rgba(157,240,210,0.10);
+      color: var(--accent-2);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .table-wrap {
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      background: rgba(8,12,24,0.35);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    thead th {
+      text-align: left;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      color: #dbe6ff;
+      background: rgba(255,255,255,0.06);
+      padding: 14px 14px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    tbody td {
+      padding: 13px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      vertical-align: top;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background: rgba(255,255,255,0.04);
+    }
+
+    tbody td:first-child,
+    thead th:first-child {
+      width: 64px;
+      text-align: center;
+    }
+
+    .note {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .tips {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .tip h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      padding: 18px 0 4px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 920px) {
+      .meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .tips {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(calc(100% - 16px), var(--max));
+        padding: 16px 0 26px;
+      }
+
+      .hero-card,
+      .card {
+        padding: 16px;
+        border-radius: 18px;
+      }
+
+      .section-head {
+        flex-direction: column;
+      }
+
+      table,
+      thead,
+      tbody,
+      tr,
+      td {
+        display: block;
+        width: 100%;
+      }
+
+      thead {
+        display: none;
+      }
+
+      .table-wrap {
+        background: transparent;
+        border: none;
+        overflow: visible;
+      }
+
+      tbody {
+        display: grid;
+        gap: 10px;
+      }
+
+      tbody tr {
+        background: rgba(255,255,255,0.06);
+        border: 1px solid var(--card-border);
+        border-radius: 16px;
+        padding: 4px 0;
+      }
+
+      tbody tr:hover {
+        background: rgba(255,255,255,0.08);
+      }
+
+      tbody td {
+        display: grid;
+        grid-template-columns: minmax(108px, 132px) 1fr;
+        gap: 8px;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+        padding: 11px 14px;
+        text-align: left !important;
+      }
+
+      tbody td:last-child {
+        border-bottom: none;
+      }
+
+      tbody td::before {
+        content: attr(data-label);
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      tbody td:first-child {
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+      }
+
+      .meta {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .meta {
+        grid-template-columns: 1fr;
+      }
+
+      .chips {
+        width: 100%;
+      }
+
+      .chip {
+        width: 100%;
+        text-align: center;
+      }
+
+      tbody td {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        color: #111;
+      }
+      .hero-card, .card, .meta-item, tbody tr {
+        box-shadow: none;
+        background: #fff;
+        border-color: #ddd;
+      }
+      .chip, .search {
+        display: none !important;
+      }
+      .count, .eyebrow {
+        color: #111;
+        border-color: #ddd;
+        background: #fff;
+      }
+      .note, .meta-item span, .section-head p, .hero p, .footer {
+        color: #444;
+      }
+      thead {
+        display: table-header-group !important;
+      }
+      table, thead, tbody, tr, td {
+        display: revert !important;
+      }
+      .table-wrap {
+        overflow: visible;
+        border-color: #ddd;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <span class="eyebrow">English Study • Present / Past / Past Participle</span>
+        <h1>100 verbos úteis em inglês, organizados para estudo</h1>
+        <p>
+          Página responsiva com as três listas ampliadas para o dobro de verbos:
+          <strong>34 irregulares essenciais</strong>, <strong>30 irregulares fáceis de confundir</strong> e
+          <strong>36 regulares de alta frequência</strong>. Em celular, cada linha vira um card para leitura confortável.
+        </p>
+
+        <div class="meta">
+          <div class="meta-item">
+            <strong>100 verbos</strong>
+            <span>Total consolidado</span>
+          </div>
+          <div class="meta-item">
+            <strong>3 grupos</strong>
+            <span>Organização pedagógica</span>
+          </div>
+          <div class="meta-item">
+            <strong>Formato responsivo</strong>
+            <span>Desktop, tablet e celular</span>
+          </div>
+          <div class="meta-item">
+            <strong>Foco prático</strong>
+            <span>Memorização e revisão rápida</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="toolbar">
+      <label class="search" aria-label="Filtrar verbos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m20 20-3.5-3.5"></path>
+        </svg>
+        <input id="searchInput" type="search" placeholder="Filtrar por qualquer forma: ex. met, written, bought..." />
+      </label>
+
+      <nav class="chips" aria-label="Navegação por grupos">
+        <a class="chip" href="#essenciais">Irregulares essenciais</a>
+<a class="chip" href="#confusiveis">Irregulares fáceis de confundir</a>
+<a class="chip" href="#regulares">Regulares de alta frequência</a>
+      </nav>
+    </div>
+
+    <div class="grid">
+      
+    <section class="card section" id="essenciais">
+      <div class="section-head">
+        <div>
+          <h2>1) Irregulares essenciais</h2>
+          <p>34 verbos-base que merecem prioridade máxima.</p>
+        </div>
+        <span class="count">34 verbos</span>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nº</th>
+              <th>Present</th>
+              <th>Past</th>
+              <th>Past Participle</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          <tr>
+            <td data-label="Nº">1</td>
+            <td data-label="Present"><strong>be</strong></td>
+            <td data-label="Past">was / were</td>
+            <td data-label="Past Participle">been</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">2</td>
+            <td data-label="Present"><strong>have</strong></td>
+            <td data-label="Past">had</td>
+            <td data-label="Past Participle">had</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">3</td>
+            <td data-label="Present"><strong>do</strong></td>
+            <td data-label="Past">did</td>
+            <td data-label="Past Participle">done</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">4</td>
+            <td data-label="Present"><strong>go</strong></td>
+            <td data-label="Past">went</td>
+            <td data-label="Past Participle">gone</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">5</td>
+            <td data-label="Present"><strong>get</strong></td>
+            <td data-label="Past">got</td>
+            <td data-label="Past Participle">got / gotten</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">6</td>
+            <td data-label="Present"><strong>make</strong></td>
+            <td data-label="Past">made</td>
+            <td data-label="Past Participle">made</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">7</td>
+            <td data-label="Present"><strong>know</strong></td>
+            <td data-label="Past">knew</td>
+            <td data-label="Past Participle">known</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">8</td>
+            <td data-label="Present"><strong>take</strong></td>
+            <td data-label="Past">took</td>
+            <td data-label="Past Participle">taken</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">9</td>
+            <td data-label="Present"><strong>see</strong></td>
+            <td data-label="Past">saw</td>
+            <td data-label="Past Participle">seen</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">10</td>
+            <td data-label="Present"><strong>come</strong></td>
+            <td data-label="Past">came</td>
+            <td data-label="Past Participle">come</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">11</td>
+            <td data-label="Present"><strong>give</strong></td>
+            <td data-label="Past">gave</td>
+            <td data-label="Past Participle">given</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">12</td>
+            <td data-label="Present"><strong>tell</strong></td>
+            <td data-label="Past">told</td>
+            <td data-label="Past Participle">told</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">13</td>
+            <td data-label="Present"><strong>become</strong></td>
+            <td data-label="Past">became</td>
+            <td data-label="Past Participle">become</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">14</td>
+            <td data-label="Present"><strong>begin</strong></td>
+            <td data-label="Past">began</td>
+            <td data-label="Past Participle">begun</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">15</td>
+            <td data-label="Present"><strong>show</strong></td>
+            <td data-label="Past">showed</td>
+            <td data-label="Past Participle">shown</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">16</td>
+            <td data-label="Present"><strong>write</strong></td>
+            <td data-label="Past">wrote</td>
+            <td data-label="Past Participle">written</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">17</td>
+            <td data-label="Present"><strong>run</strong></td>
+            <td data-label="Past">ran</td>
+            <td data-label="Past Participle">run</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">18</td>
+            <td data-label="Present"><strong>speak</strong></td>
+            <td data-label="Past">spoke</td>
+            <td data-label="Past Participle">spoken</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">19</td>
+            <td data-label="Present"><strong>eat</strong></td>
+            <td data-label="Past">ate</td>
+            <td data-label="Past Participle">eaten</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">20</td>
+            <td data-label="Present"><strong>drink</strong></td>
+            <td data-label="Past">drank</td>
+            <td data-label="Past Participle">drunk</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">21</td>
+            <td data-label="Present"><strong>read</strong></td>
+            <td data-label="Past">read</td>
+            <td data-label="Past Participle">read</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">22</td>
+            <td data-label="Present"><strong>drive</strong></td>
+            <td data-label="Past">drove</td>
+            <td data-label="Past Participle">driven</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">23</td>
+            <td data-label="Present"><strong>choose</strong></td>
+            <td data-label="Past">chose</td>
+            <td data-label="Past Participle">chosen</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">24</td>
+            <td data-label="Present"><strong>break</strong></td>
+            <td data-label="Past">broke</td>
+            <td data-label="Past Participle">broken</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">25</td>
+            <td data-label="Present"><strong>grow</strong></td>
+            <td data-label="Past">grew</td>
+            <td data-label="Past Participle">grown</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">26</td>
+            <td data-label="Present"><strong>fall</strong></td>
+            <td data-label="Past">fell</td>
+            <td data-label="Past Participle">fallen</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">27</td>
+            <td data-label="Present"><strong>build</strong></td>
+            <td data-label="Past">built</td>
+            <td data-label="Past Participle">built</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">28</td>
+            <td data-label="Present"><strong>understand</strong></td>
+            <td data-label="Past">understood</td>
+            <td data-label="Past Participle">understood</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">29</td>
+            <td data-label="Present"><strong>send</strong></td>
+            <td data-label="Past">sent</td>
+            <td data-label="Past Participle">sent</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">30</td>
+            <td data-label="Present"><strong>spend</strong></td>
+            <td data-label="Past">spent</td>
+            <td data-label="Past Participle">spent</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">31</td>
+            <td data-label="Present"><strong>hold</strong></td>
+            <td data-label="Past">held</td>
+            <td data-label="Past Participle">held</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">32</td>
+            <td data-label="Present"><strong>win</strong></td>
+            <td data-label="Past">won</td>
+            <td data-label="Past Participle">won</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">33</td>
+            <td data-label="Present"><strong>wear</strong></td>
+            <td data-label="Past">wore</td>
+            <td data-label="Past Participle">worn</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">34</td>
+            <td data-label="Present"><strong>draw</strong></td>
+            <td data-label="Past">drew</td>
+            <td data-label="Past Participle">drawn</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note">Observações: “get → got / gotten” varia entre inglês britânico e americano; “read” tem a mesma grafia no present e no past, mas a pronúncia muda.</p>
+    </section>
+
+    <section class="card section" id="confusiveis">
+      <div class="section-head">
+        <div>
+          <h2>2) Irregulares fáceis de confundir</h2>
+          <p>30 verbos com padrões que costumam gerar erro por semelhança ou automatismo.</p>
+        </div>
+        <span class="count">30 verbos</span>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nº</th>
+              <th>Present</th>
+              <th>Past</th>
+              <th>Past Participle</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          <tr>
+            <td data-label="Nº">1</td>
+            <td data-label="Present"><strong>say</strong></td>
+            <td data-label="Past">said</td>
+            <td data-label="Past Participle">said</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">2</td>
+            <td data-label="Present"><strong>think</strong></td>
+            <td data-label="Past">thought</td>
+            <td data-label="Past Participle">thought</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">3</td>
+            <td data-label="Present"><strong>find</strong></td>
+            <td data-label="Past">found</td>
+            <td data-label="Past Participle">found</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">4</td>
+            <td data-label="Present"><strong>feel</strong></td>
+            <td data-label="Past">felt</td>
+            <td data-label="Past Participle">felt</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">5</td>
+            <td data-label="Present"><strong>leave</strong></td>
+            <td data-label="Past">left</td>
+            <td data-label="Past Participle">left</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">6</td>
+            <td data-label="Present"><strong>mean</strong></td>
+            <td data-label="Past">meant</td>
+            <td data-label="Past Participle">meant</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">7</td>
+            <td data-label="Present"><strong>keep</strong></td>
+            <td data-label="Past">kept</td>
+            <td data-label="Past Participle">kept</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">8</td>
+            <td data-label="Present"><strong>hear</strong></td>
+            <td data-label="Past">heard</td>
+            <td data-label="Past Participle">heard</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">9</td>
+            <td data-label="Present"><strong>bring</strong></td>
+            <td data-label="Past">brought</td>
+            <td data-label="Past Participle">brought</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">10</td>
+            <td data-label="Present"><strong>buy</strong></td>
+            <td data-label="Past">bought</td>
+            <td data-label="Past Participle">bought</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">11</td>
+            <td data-label="Present"><strong>teach</strong></td>
+            <td data-label="Past">taught</td>
+            <td data-label="Past Participle">taught</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">12</td>
+            <td data-label="Present"><strong>catch</strong></td>
+            <td data-label="Past">caught</td>
+            <td data-label="Past Participle">caught</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">13</td>
+            <td data-label="Present"><strong>seek</strong></td>
+            <td data-label="Past">sought</td>
+            <td data-label="Past Participle">sought</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">14</td>
+            <td data-label="Present"><strong>fight</strong></td>
+            <td data-label="Past">fought</td>
+            <td data-label="Past Participle">fought</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">15</td>
+            <td data-label="Present"><strong>sit</strong></td>
+            <td data-label="Past">sat</td>
+            <td data-label="Past Participle">sat</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">16</td>
+            <td data-label="Present"><strong>stand</strong></td>
+            <td data-label="Past">stood</td>
+            <td data-label="Past Participle">stood</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">17</td>
+            <td data-label="Present"><strong>lose</strong></td>
+            <td data-label="Past">lost</td>
+            <td data-label="Past Participle">lost</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">18</td>
+            <td data-label="Present"><strong>pay</strong></td>
+            <td data-label="Past">paid</td>
+            <td data-label="Past Participle">paid</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">19</td>
+            <td data-label="Present"><strong>put</strong></td>
+            <td data-label="Past">put</td>
+            <td data-label="Past Participle">put</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">20</td>
+            <td data-label="Present"><strong>let</strong></td>
+            <td data-label="Past">let</td>
+            <td data-label="Past Participle">let</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">21</td>
+            <td data-label="Present"><strong>cut</strong></td>
+            <td data-label="Past">cut</td>
+            <td data-label="Past Participle">cut</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">22</td>
+            <td data-label="Present"><strong>set</strong></td>
+            <td data-label="Past">set</td>
+            <td data-label="Past Participle">set</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">23</td>
+            <td data-label="Present"><strong>hit</strong></td>
+            <td data-label="Past">hit</td>
+            <td data-label="Past Participle">hit</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">24</td>
+            <td data-label="Present"><strong>shut</strong></td>
+            <td data-label="Past">shut</td>
+            <td data-label="Past Participle">shut</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">25</td>
+            <td data-label="Present"><strong>cost</strong></td>
+            <td data-label="Past">cost</td>
+            <td data-label="Past Participle">cost</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">26</td>
+            <td data-label="Present"><strong>sell</strong></td>
+            <td data-label="Past">sold</td>
+            <td data-label="Past Participle">sold</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">27</td>
+            <td data-label="Present"><strong>feed</strong></td>
+            <td data-label="Past">fed</td>
+            <td data-label="Past Participle">fed</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">28</td>
+            <td data-label="Present"><strong>lead</strong></td>
+            <td data-label="Past">led</td>
+            <td data-label="Past Participle">led</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">29</td>
+            <td data-label="Present"><strong>meet</strong></td>
+            <td data-label="Past">met</td>
+            <td data-label="Past Participle">met</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">30</td>
+            <td data-label="Present"><strong>lay</strong></td>
+            <td data-label="Past">laid</td>
+            <td data-label="Past Participle">laid</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note">Observação: aqui entram muitos blocos úteis para memorização, como thought, brought, bought, taught, caught, fought.</p>
+    </section>
+
+    <section class="card section" id="regulares">
+      <div class="section-head">
+        <div>
+          <h2>3) Regulares de alta frequência</h2>
+          <p>36 verbos frequentes que seguem padrão regular.</p>
+        </div>
+        <span class="count">36 verbos</span>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nº</th>
+              <th>Present</th>
+              <th>Past</th>
+              <th>Past Participle</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          <tr>
+            <td data-label="Nº">1</td>
+            <td data-label="Present"><strong>want</strong></td>
+            <td data-label="Past">wanted</td>
+            <td data-label="Past Participle">wanted</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">2</td>
+            <td data-label="Present"><strong>look</strong></td>
+            <td data-label="Past">looked</td>
+            <td data-label="Past Participle">looked</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">3</td>
+            <td data-label="Present"><strong>use</strong></td>
+            <td data-label="Past">used</td>
+            <td data-label="Past Participle">used</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">4</td>
+            <td data-label="Present"><strong>work</strong></td>
+            <td data-label="Past">worked</td>
+            <td data-label="Past Participle">worked</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">5</td>
+            <td data-label="Present"><strong>call</strong></td>
+            <td data-label="Past">called</td>
+            <td data-label="Past Participle">called</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">6</td>
+            <td data-label="Present"><strong>try</strong></td>
+            <td data-label="Past">tried</td>
+            <td data-label="Past Participle">tried</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">7</td>
+            <td data-label="Present"><strong>ask</strong></td>
+            <td data-label="Past">asked</td>
+            <td data-label="Past Participle">asked</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">8</td>
+            <td data-label="Present"><strong>need</strong></td>
+            <td data-label="Past">needed</td>
+            <td data-label="Past Participle">needed</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">9</td>
+            <td data-label="Present"><strong>seem</strong></td>
+            <td data-label="Past">seemed</td>
+            <td data-label="Past Participle">seemed</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">10</td>
+            <td data-label="Present"><strong>help</strong></td>
+            <td data-label="Past">helped</td>
+            <td data-label="Past Participle">helped</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">11</td>
+            <td data-label="Present"><strong>talk</strong></td>
+            <td data-label="Past">talked</td>
+            <td data-label="Past Participle">talked</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">12</td>
+            <td data-label="Present"><strong>turn</strong></td>
+            <td data-label="Past">turned</td>
+            <td data-label="Past Participle">turned</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">13</td>
+            <td data-label="Present"><strong>start</strong></td>
+            <td data-label="Past">started</td>
+            <td data-label="Past Participle">started</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">14</td>
+            <td data-label="Present"><strong>play</strong></td>
+            <td data-label="Past">played</td>
+            <td data-label="Past Participle">played</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">15</td>
+            <td data-label="Present"><strong>move</strong></td>
+            <td data-label="Past">moved</td>
+            <td data-label="Past Participle">moved</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">16</td>
+            <td data-label="Present"><strong>live</strong></td>
+            <td data-label="Past">lived</td>
+            <td data-label="Past Participle">lived</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">17</td>
+            <td data-label="Present"><strong>believe</strong></td>
+            <td data-label="Past">believed</td>
+            <td data-label="Past Participle">believed</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">18</td>
+            <td data-label="Present"><strong>happen</strong></td>
+            <td data-label="Past">happened</td>
+            <td data-label="Past Participle">happened</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">19</td>
+            <td data-label="Present"><strong>like</strong></td>
+            <td data-label="Past">liked</td>
+            <td data-label="Past Participle">liked</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">20</td>
+            <td data-label="Present"><strong>love</strong></td>
+            <td data-label="Past">loved</td>
+            <td data-label="Past Participle">loved</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">21</td>
+            <td data-label="Present"><strong>open</strong></td>
+            <td data-label="Past">opened</td>
+            <td data-label="Past Participle">opened</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">22</td>
+            <td data-label="Present"><strong>close</strong></td>
+            <td data-label="Past">closed</td>
+            <td data-label="Past Participle">closed</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">23</td>
+            <td data-label="Present"><strong>watch</strong></td>
+            <td data-label="Past">watched</td>
+            <td data-label="Past Participle">watched</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">24</td>
+            <td data-label="Present"><strong>walk</strong></td>
+            <td data-label="Past">walked</td>
+            <td data-label="Past Participle">walked</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">25</td>
+            <td data-label="Present"><strong>study</strong></td>
+            <td data-label="Past">studied</td>
+            <td data-label="Past Participle">studied</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">26</td>
+            <td data-label="Present"><strong>change</strong></td>
+            <td data-label="Past">changed</td>
+            <td data-label="Past Participle">changed</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">27</td>
+            <td data-label="Present"><strong>create</strong></td>
+            <td data-label="Past">created</td>
+            <td data-label="Past Participle">created</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">28</td>
+            <td data-label="Present"><strong>wait</strong></td>
+            <td data-label="Past">waited</td>
+            <td data-label="Past Participle">waited</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">29</td>
+            <td data-label="Present"><strong>follow</strong></td>
+            <td data-label="Past">followed</td>
+            <td data-label="Past Participle">followed</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">30</td>
+            <td data-label="Present"><strong>remember</strong></td>
+            <td data-label="Past">remembered</td>
+            <td data-label="Past Participle">remembered</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">31</td>
+            <td data-label="Present"><strong>learn</strong></td>
+            <td data-label="Past">learned / learnt</td>
+            <td data-label="Past Participle">learned / learnt</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">32</td>
+            <td data-label="Present"><strong>travel</strong></td>
+            <td data-label="Past">traveled / travelled</td>
+            <td data-label="Past Participle">traveled / travelled</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">33</td>
+            <td data-label="Present"><strong>return</strong></td>
+            <td data-label="Past">returned</td>
+            <td data-label="Past Participle">returned</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">34</td>
+            <td data-label="Present"><strong>answer</strong></td>
+            <td data-label="Past">answered</td>
+            <td data-label="Past Participle">answered</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">35</td>
+            <td data-label="Present"><strong>clean</strong></td>
+            <td data-label="Past">cleaned</td>
+            <td data-label="Past Participle">cleaned</td>
+          </tr>
+
+          <tr>
+            <td data-label="Nº">36</td>
+            <td data-label="Present"><strong>visit</strong></td>
+            <td data-label="Past">visited</td>
+            <td data-label="Past Participle">visited</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note">Observação: “learned / learnt” e “traveled / travelled” são variantes válidas; a primeira forma é mais comum no inglês americano.</p>
+    </section>
+
+      <section class="card">
+        <div class="section-head">
+          <div>
+            <h2>Notas rápidas para estudar melhor</h2>
+            <p>Três observações que aumentam retenção e reduzem erro.</p>
+          </div>
+        </div>
+
+        <div class="tips">
+          <article class="tip">
+            <h3>Past x Past Participle</h3>
+            <p>
+              O <strong>past</strong> é usado para ação concluída no passado. O <strong>past participle</strong>
+              geralmente aparece com <strong>have / has / had</strong> ou em voz passiva.
+            </p>
+          </article>
+          <article class="tip">
+            <h3>Aprenda em blocos</h3>
+            <p>
+              Memorize padrões juntos: <strong>think–thought–thought</strong>, <strong>buy–bought–bought</strong>,
+              <strong>teach–taught–taught</strong>, <strong>meet–met–met</strong>.
+            </p>
+          </article>
+          <article class="tip">
+            <h3>Revise com frases</h3>
+            <p>
+              Não memorize só a tabela. Use cada verbo em três frases: present, past e present perfect.
+              Isso fixa forma e uso ao mesmo tempo.
+            </p>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <p class="footer">
+      Arquivo gerado para estudo em PT-BR, com foco em leitura confortável no celular.
+    </p>
+  </main>
+
+  <script>
+    (function () {
+      const input = document.getElementById('searchInput');
+      const rows = Array.from(document.querySelectorAll('tbody tr'));
+      const sections = Array.from(document.querySelectorAll('.section'));
+
+      function updateCounts() {
+        sections.forEach(section => {
+          const visible = section.querySelectorAll('tbody tr:not(.hidden)').length;
+          const badge = section.querySelector('.count');
+          if (badge) {
+            badge.textContent = visible + ' verbos';
+          }
+        });
+      }
+
+      function filterRows() {
+        const term = input.value.trim().toLowerCase();
+        rows.forEach(row => {
+          const text = row.innerText.toLowerCase();
+          row.classList.toggle('hidden', term && !text.includes(term));
+        });
+        updateCounts();
+      }
+
+      input.addEventListener('input', filterRows);
+      updateCounts();
+    })();
+  </script>
+</body>
+</html>
