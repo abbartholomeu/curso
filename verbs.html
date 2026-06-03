@@ -41,6 +41,42 @@
       padding: 24px 0 40px;
     }
 
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 0 0 18px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .brand-wrap {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-home-link {
+            display: inline-flex;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: transform 0.18s ease, opacity 0.18s ease;
+        }
+
+        .brand-home-link:hover { transform: translateY(-1px); }
+        .brand-home-link:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        .brand-wrap img {
+            width: 72px;
+            height: 72px;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.14);
+            background: rgba(255,255,255,0.04);
+        }
+
     .hero { padding: 18px 0 10px; }
 
     .hero-card, .card {
@@ -315,6 +351,7 @@
     @media (max-width: 720px) {
       .container { width: min(calc(100% - 16px), var(--max)); padding: 16px 0 26px; }
       .hero-card, .card { padding: 16px; border-radius: 18px; }
+            .topbar { flex-direction: column; align-items: flex-start; }
       .section-head { flex-direction: column; }
       table, thead, tbody, tr, td { display: block; width: 100%; }
       thead { display: none; }
@@ -347,21 +384,29 @@
 </head>
 <body>
   <main class="container">
+        <header class="topbar">
+            <div class="brand-wrap">
+                <a class="brand-home-link" href="index.html" aria-label="Ir para a página inicial">
+                    <img src="Logo_mosaicoemente.png" alt="Logo Mosaico e Mente" />
+                </a>
+            </div>
+            <span>English Study • Pronúncia de verbos</span>
+        </header>
+
     <section class="hero">
       <div class="hero-card">
         <span class="eyebrow">English Study • Toque para ouvir</span>
-        <h1>100 verbos úteis em inglês, agora com pronúncia por clique</h1>
+        <h1>100 verbos úteis em inglês, com pronúncia por clique</h1>
         <p>
-          Cada forma verbal virou um botão. Em qualquer celular ou desktop, basta tocar em <strong>Present</strong>,
+          Cada forma verbal tem um botão para ouvir a pronúncia. basta tocar em <strong>Present</strong>,
           <strong>Past</strong> ou <strong>Past Participle</strong> para ouvir a pronúncia. O modo padrão usa a voz do navegador;
-          o modo MP3 existe para áudio premium e consistente.
+          o modo MP3* existe para áudio premium humano (MP3* em implementação).
         </p>
 
         <div class="meta">
           <div class="meta-item"><strong>100 verbos</strong><span>Total consolidado</span></div>
           <div class="meta-item"><strong>Toque e ouça</strong><span>Cada forma verbal é clicável</span></div>
           <div class="meta-item"><strong>US ou UK</strong><span>Selecione o sotaque preferido</span></div>
-          <div class="meta-item"><strong>Mobile first</strong><span>Leitura e toque confortáveis no celular</span></div>
         </div>
       </div>
     </section>
@@ -411,9 +456,9 @@
       <div class="info-card">
         <div class="status-line">
           <span id="voiceStatus" class="status-pill">Carregando vozes…</span>
-          <span id="playbackHint">Modo navegador: prático e imediato. Modo MP3: mais consistente, desde que você coloque os arquivos na pasta <strong>audio/us</strong> ou <strong>audio/uk</strong>.</span>
+          <span id="playbackHint">Modo navegador: prático e imediato.</span>
         </div>
-        <p><strong>Importante:</strong> para pronúncia realmente consistente entre aparelhos, use <strong>MP3 pré-gerado</strong>. O navegador depende das vozes disponíveis no próprio sistema.</p>
+        <p>O navegador depende das vozes disponíveis no próprio sistema.</p>
       </div>
     </div>
 

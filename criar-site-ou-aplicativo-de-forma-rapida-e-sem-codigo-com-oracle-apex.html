@@ -73,6 +73,32 @@
       font-size: 0.78rem;
     }
 
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+    }
+
+    .brand-home-link {
+      display: inline-flex;
+      border-radius: 14px;
+      text-decoration: none;
+      transition: transform 0.12s ease, opacity 0.12s ease;
+    }
+
+    .brand-home-link:hover { transform: translateY(-1px); }
+    .brand-home-link:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .brand-wrap img {
+      width: 72px;
+      height: 72px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+    }
+
     .hero-card { padding: 22px; }
     .hero-grid {
       display: grid;
@@ -178,7 +204,11 @@
 <body>
   <main class="page-shell">
     <header class="topbar">
-      <span class="badge">Mosaico e Mente</span>
+      <div class="brand-wrap">
+        <a class="brand-home-link" href="index.html" aria-label="Ir para a página inicial">
+          <img src="Logo_mosaicoemente.png" alt="Logo Mosaico e Mente" />
+        </a>
+      </div>
       <span>Curso Oracle APEX • Low-Code • Desenvolvimento de sistemas</span>
     </header>
 

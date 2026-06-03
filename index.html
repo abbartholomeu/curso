@@ -102,9 +102,22 @@
       flex-wrap: wrap;
     }
 
+    .brand-home-link {
+      display: inline-flex;
+      border-radius: 14px;
+      text-decoration: none;
+      transition: transform 0.12s ease, opacity 0.12s ease;
+    }
+
+    .brand-home-link:hover { transform: translateY(-1px); }
+    .brand-home-link:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
     .brand-wrap img {
-      width: 64px;
-      height: 64px;
+      width: 128px;
+      height: 128px;
       border-radius: 14px;
       border: 1px solid rgba(255,255,255,0.14);
       background: rgba(255,255,255,0.04);
@@ -267,6 +280,29 @@
       align-content: start;
     }
 
+    .verbs-card {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 18px;
+      align-items: center;
+      background:
+        linear-gradient(180deg, rgba(124, 199, 255, 0.10), rgba(255,255,255,0.04));
+      border: 1px solid rgba(124, 199, 255, 0.18);
+    }
+
+    .verbs-card img {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .verbs-card-content {
+      display: grid;
+      gap: 10px;
+      align-content: center;
+    }
+
     .video-card video,
     .video-card iframe {
       width: 100%;
@@ -287,6 +323,7 @@
     @media (max-width: 980px) {
       .grid-2 { grid-template-columns: 1fr; }
       .mini-grid { grid-template-columns: 1fr; }
+      .verbs-card { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
@@ -311,7 +348,11 @@
 <body>
   <main class="page-shell">
     <header class="topbar">
-      <span class="badge">Mosaico e Mente</span>
+      <div class="brand-wrap">
+        <a class="brand-home-link" href="index.html" aria-label="Ir para a página inicial">
+          <img src="Logo_mosaicoemente.png" alt="Logo Mosaico e Mente" />
+        </a>
+      </div>
       <span>Curso prático • Oracle APEX • Desenvolvimento web</span>
     </header>
 
@@ -320,7 +361,6 @@
         <div class="hero-grid">
           <div>
             <div class="brand-wrap">
-              <img src="Logo_mosaicoemente.png" alt="Logo Mosaico e Mente" />
               <div>
                 <p class="eyebrow">Curso prático e direto ao ponto</p>
                 <h1>Mosaico e Mente</h1>
@@ -378,6 +418,19 @@
     </section>
 
     <section class="grid-1">
+      <article class="panel verbs-card">
+        <img src="improve-your-english-pronunciation.svg" alt="Improve Your English Pronunciation" />
+        <div class="verbs-card-content">
+          <p class="eyebrow">Serviço Verbs para estudantes de inglês</p>
+          <h2>Improve Your English Pronunciation</h2>
+          <p class="lead">O Verbs é um exemplo prático de implementação para estudantes de inglês treinarem a pronúncia de verbos úteis. Cada forma verbal pode ser tocada para ouvir a pronúncia, facilitando estudo, repetição e comparação entre formas como presente, passado e particípio.</p>
+          <p class="lead">A página pode ser usada livremente como referência de interface, experiência do usuário e aplicação educacional simples em HTML, CSS e JavaScript.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="verbs.html">Conhecer o Verbs</a>
+          </div>
+        </div>
+      </article>
+
       <article class="panel video-card">
         <p class="eyebrow">Curso de Introdução ao Oracle APEX</p>
         <h2>Aprenda Low-Code com uma proposta prática para criar sistemas e aplicativos digitais</h2>
