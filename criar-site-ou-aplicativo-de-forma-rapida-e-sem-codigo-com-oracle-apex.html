@@ -3,182 +3,342 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Faça seu App Grátis na Nuvem</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="Curso de introdução ao Oracle APEX com abordagem low-code, prática e orientada à criação de aplicativos digitais." />
+  <title>Curso Oracle APEX | Mosaico e Mente</title>
+  <link rel="icon" href="Logo_mosaicoemente.png" type="image/png" />
   <style>
+    :root {
+      --bg: #08111f;
+      --panel: #111c2d;
+      --panel-2: #17253a;
+      --text: #f5f7fb;
+      --muted: #c8d4ea;
+      --accent: #f6c85f;
+      --accent-red: #c62828;
+      --accent-green: #58d0b2;
+      --line: rgba(255,255,255,0.12);
+      --shadow: 0 18px 40px rgba(6,10,18,0.35);
+    }
+
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(246,200,95,0.08), transparent 18%),
+        linear-gradient(180deg, #07101d 0%, #0b1425 45%, #0e1728 100%);
+      line-height: 1.6;
     }
-	header {
-      background-color: #8e4547;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-      position: relative;
+
+    img, video { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .page-shell {
+      width: min(1160px, calc(100% - 24px));
+      margin: 0 auto;
+      padding: 18px 0 40px;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+
+    .hero-card, .panel, .footer-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
     }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-    .container {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
-    .section h2 {
-      color: #8e4547;
-      margin-bottom: 1rem;
-    }
-    .benefits, .curriculum, .testimonials {
+
+    .topbar {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 0 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
     }
-    .benefit, .module, .testimonial {
-      background-color: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(88, 208, 178, 0.10);
+      border: 1px solid rgba(88, 208, 178, 0.22);
+      color: #bff5e8;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
     }
-    .cta {
-      text-align: center;
-      margin-top: 2rem;
+
+    .hero-card { padding: 22px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+      align-items: center;
     }
-    .cta a {
-      background-color: #8e4547;
-      color: white;
-      padding: 1rem 2rem;
+
+    .eyebrow {
+      color: #bff5e8;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-size: clamp(2rem, 6vw, 3.3rem); line-height: 1.08; margin-bottom: 8px; }
+    h2 { font-size: clamp(1.2rem, 3vw, 1.7rem); line-height: 1.15; margin-bottom: 8px; }
+    .lead { color: var(--muted); font-size: clamp(1rem, 2vw, 1.06rem); max-width: 62ch; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 0.12s ease, opacity 0.12s ease;
     }
-    footer {
-      background-color: #333;
-      color: white;
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: linear-gradient(135deg, #c62828, #e53935);
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(198,40,40,0.25);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      border-color: var(--line);
+      color: var(--text);
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      color: #05220d;
+    }
+
+    .mini-grid, .benefits, .curriculum, .testimonials {
+      display: grid;
+      gap: 12px;
+    }
+    .mini-grid { grid-template-columns: repeat(3, 1fr); }
+    .benefits, .curriculum, .testimonials { grid-template-columns: repeat(3, 1fr); }
+
+    .mini-card, .benefit, .module, .testimonial {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+    }
+    .mini-card strong, .benefit h3, .module h3 { display: block; margin-bottom: 4px; color: #fff; font-size: 1rem; }
+    .mini-card span, .benefit p, .module p, .testimonial p { color: var(--muted); font-size: 0.95rem; }
+
+    .panel { padding: 18px; }
+    .section { margin-top: 18px; }
+    .video-frame video { width: 100%; border-radius: 18px; border: 1px solid var(--line); background: #000; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+    .hero-note { color: var(--muted); font-size: 0.95rem; }
+
+    .footer-card {
+      padding: 18px;
+      margin-top: 18px;
+      color: var(--muted);
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      font-size: 0.95rem;
     }
-    @media (min-width: 768px) {
-      .benefits, .curriculum, .testimonials {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-      .benefit, .module, .testimonial {
-        flex: 1 1 calc(33.333% - 1rem);
-      }
-	   .instructor-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .mini-grid, .benefits, .curriculum, .testimonials { grid-template-columns: 1fr; }
     }
+
+    @media (max-width: 640px) {
+      .page-shell { width: min(100% - 16px, 1160px); padding-top: 8px; }
+      .hero-card, .panel, .footer-card { padding: 16px; border-radius: 18px; }
+      .topbar { flex-direction: column; align-items: flex-start; }
+      .cta-row { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0KBQKKLLLT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-0KBQKKLLLT');
-</script>
 <body>
-  <header>
-    <h1>Faça seu App Grátis na Nuvem</h1>
-    <p>Crie aplicativos sem codificar usando Oracle APEX</p>
-	<p>por: <strong>André Bartholomeu</strong></p>
-	<p>Engenheiro da Computação</p>
-	<img src="barth_treinamentos.png" alt="Instrutor André Bartholomeu" class="instructor-img">
-        
-  </header>
+  <main class="page-shell">
+    <header class="topbar">
+      <span class="badge">Mosaico e Mente</span>
+      <span>Curso Oracle APEX • Low-Code • Desenvolvimento de sistemas</span>
+    </header>
 
-  <div class="container">
-    <section class="section">
-      <h2>Por que este curso é para você?</h2>
-      <div class="benefits">
-        <div class="benefit">
-          <h3>Sem necessidade de programação</h3>
-          <p>Aprenda a criar aplicativos funcionais sem escrever uma linha de código.</p>
-        </div>
-        <div class="benefit">
-          <h3>100% na nuvem</h3>
-          <p>Desenvolva e publique seus aplicativos diretamente na nuvem com a Oracle.</p>
-        </div>
-        <div class="benefit">
-          <h3>Gratuito</h3>
-          <p>Utilize ferramentas gratuitas fornecidas pela Oracle para criar seus aplicativos.</p>
-        </div>
-      </div>
-    </section>
-    <div class="container">
-      <video width="100%" height="auto" controls>
-        <source src="criar-site-ou-aplicativo-de-forma-rapida-e-sem-codigo-com-oracle-apex.mp4" type="video/mp4">
-        Seu navegador não suporta o vídeo HTML5.
-      </video>
-    </div>
+    <section class="hero-card">
+      <div class="hero-grid">
+        <article>
+          <p class="eyebrow">Introdução ao Oracle APEX</p>
+          <h1>Crie aplicativos digitais com Low-Code, rapidez e propósito</h1>
+          <p class="lead">Este curso apresenta uma forma prática e acessível de construir soluções digitais com Oracle APEX, mantendo a proposta de desenvolvimento de sistemas de informação e treinamento em tecnologia do Portal Mosaico e Mente.</p>
+          <p class="hero-note">Ideal para quem quer aprender sem complicação, com foco em resultado e aplicação real.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://www.udemy.com/course/oraclenocode/?couponCode=MOSAICO50">Inscreva-se agora</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/5516981071513" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+          </div>
+        </article>
 
-    <section class="section">
-      <h2>O que você vai aprender</h2>
-      <div class="curriculum">
-        <div class="module">
-          <h3>Módulo 1: Introdução ao Oracle APEX</h3>
-          <p>Entenda o que é o Oracle APEX e como ele pode ajudar no desenvolvimento de aplicativos.</p>
-        </div>
-        <div class="module">
-          <h3>Módulo 2: Criando sua conta gratuita</h3>
-          <p>Passo a passo para criar sua conta gratuita na Oracle Cloud e acessar o APEX.</p>
-        </div>
-        <div class="module">
-          <h3>Módulo 3: Desenvolvendo seu primeiro aplicativo</h3>
-          <p>Aprenda a criar um aplicativo de gestão de clientes e vendas com funcionalidades práticas.</p>
-        </div>
+        <article class="mini-grid" aria-label="Pontos do curso">
+          <div class="mini-card"><strong>Sem programação</strong><span>Crie soluções com interface visual e lógica prática.</span></div>
+          <div class="mini-card"><strong>Na nuvem</strong><span>Publique e utilize ferramentas com infraestrutura moderna.</span></div>
+          <div class="mini-card"><strong>Foco em resultado</strong><span>Aprenda a construir o que faz sentido para seu projeto ou negócio.</span></div>
+        </article>
       </div>
     </section>
 
     <section class="section">
-      <h2>Depoimentos</h2>
-      <div class="testimonials">
-        <div class="testimonial">
-          <p>"Consegui criar meu próprio aplicativo para gerenciar minhas vendas sem saber programar!"</p>
-          <p><strong>— João Crisanto Ribeiro (Empresário)</strong></p>
+      <article class="panel">
+        <p class="eyebrow">Por que este curso é para você?</p>
+        <h2>Benefícios principais</h2>
+        <div class="benefits">
+          <div class="benefit"><h3>Sem necessidade de programação</h3><p>Aprenda a criar aplicativos funcionais com uma abordagem visual e prática.</p></div>
+          <div class="benefit"><h3>100% na nuvem</h3><p>Desenvolva e publique seus aplicativos diretamente com recursos da Oracle.</p></div>
+          <div class="benefit"><h3>Aprendizado direto</h3><p>Foco em conceitos essenciais, ferramentas úteis e aplicação real do Low-Code.</p></div>
         </div>
-        <div class="testimonial">
-          <p>"O curso é direto ao ponto e muito fácil de acompanhar. Recomendo!"</p>
-          <p><strong>— Salomé Oliveira Santos (Autônoma)</strong></p>
-        </div>
-        <div class="testimonial">
-          <p>"Agora tenho um aplicativo funcional para meu negócio, tudo graças a este curso."</p>
-          <p><strong>— Pedro Araminta Valcácio (Administrador de Empresas)</strong></p>
-        </div>
-      </div>
+      </article>
     </section>
 
-    <div class="cta">
-      <a href="https://www.udemy.com/course/oraclenocode/?couponCode=MOSAICO50">Inscreva-se agora</a>
-    </div>
-  </div>
-  <div class="container">
-      <img src="criar-site-ou-aplicativo-de-forma-rapida-e-sem-codigo-com-oracle-apex.png" alt="Capa do Curso" style="width: 100%; max-width: 960px; border-radius: 8px; margin-bottom: 20px;">
-  </div>
-  <footer>
-    <p>&copy; 2025 Curso Oracle APEX por Andre Bartholomeu (Engenheiro da Computação). Todos os direitos reservados.</p>
-  </footer>
+    <section class="section">
+      <article class="panel video-frame">
+        <p class="eyebrow">Vídeo de introdução</p>
+        <h2>Veja o curso em ação</h2>
+        <p class="lead">Use o vídeo como apoio visual para apresentar a proposta do curso e reforçar o valor do aprendizado low-code.</p>
+        <video controls playsinline preload="metadata" poster="criar-site-ou-aplicativo-de-forma-rapida-e-sem-codigo-com-oracle-apex.png">
+          <source src="criar-site-ou-aplicativo-de-forma-rapida-e-sem-codigo-com-oracle-apex.mp4" type="video/mp4" />
+          Seu navegador não suporta vídeo HTML5.
+        </video>
+      </article>
+    </section>
+
+    <section class="section">
+      <article class="panel">
+        <p class="eyebrow">O que você vai aprender</p>
+        <h2>Módulos do curso</h2>
+        <div class="curriculum">
+          <div class="module"><h3>Módulo 1: Introdução ao Oracle APEX</h3><p>Entenda a plataforma, o conceito Low-Code e como começar com segurança.</p></div>
+          <div class="module"><h3>Módulo 2: Criando sua conta gratuita</h3><p>Passo a passo para criar sua conta e acessar a ferramenta com a Oracle Cloud.</p></div>
+          <div class="module"><h3>Módulo 3: Construindo sua primeira solução</h3><p>Aprenda a desenvolver um aplicativo funcional com foco em uso prático e produtividade.</p></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <article class="panel">
+        <p class="eyebrow">Depoimentos</p>
+        <h2>O que alunos destacam</h2>
+        <div class="testimonials">
+          <div class="testimonial"><p>“Consegui criar meu próprio aplicativo para gerenciar minhas vendas sem saber programar.”</p><p><strong>— João Crisanto Ribeiro</strong></p></div>
+          <div class="testimonial"><p>“O curso é direto ao ponto e muito fácil de acompanhar. Recomendo.”</p><p><strong>— Salomé Oliveira Santos</strong></p></div>
+          <div class="testimonial"><p>“Agora tenho uma solução funcional para meu negócio, tudo graças a este curso.”</p><p><strong>— Pedro Araminta Valcácio</strong></p></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <article class="panel">
+        <p class="eyebrow">Próximo passo</p>
+        <h2>Comece agora</h2>
+        <p class="lead">Se o objetivo é aprender Oracle APEX com uma abordagem prática e acessível, esta é a página ideal para apresentar o curso com a identidade visual do Portal Mosaico e Mente.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://www.udemy.com/course/oraclenocode/?couponCode=MOSAICO50">Inscreva-se agora</a>
+          <a class="btn btn-whatsapp" href="https://wa.me/5516981071513" target="_blank" rel="noopener noreferrer">Falar pelo WhatsApp</a>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer-card">
+      <strong>Mosaico e Mente</strong> • Curso Oracle APEX • Desenvolvimento de sistemas e treinamento em tecnologia.<br />
+      © 2025 Mosaico e Mente • andrebarth@gmail.com
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion && window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from('.topbar', {
+        opacity: 0,
+        y: -16,
+        duration: 0.7,
+        ease: 'power2.out'
+      });
+
+      gsap.from('.hero-card', {
+        opacity: 0,
+        y: 24,
+        duration: 0.8,
+        ease: 'power2.out',
+        delay: 0.1
+      });
+
+      gsap.from('.hero-card .eyebrow, .hero-card h1, .hero-card .lead, .hero-card .hero-note, .hero-card .cta-row', {
+        opacity: 0,
+        y: 18,
+        duration: 0.6,
+        ease: 'power2.out',
+        stagger: 0.1,
+        delay: 0.25
+      });
+
+      gsap.from('.hero-card .mini-card', {
+        opacity: 0,
+        y: 20,
+        duration: 0.55,
+        ease: 'power2.out',
+        stagger: 0.08,
+        delay: 0.35
+      });
+
+      gsap.utils.toArray('.panel, .footer-card').forEach((element) => {
+        gsap.from(element, {
+          opacity: 0,
+          y: 28,
+          duration: 0.65,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 85%',
+            once: true
+          }
+        });
+      });
+
+      gsap.utils.toArray('.benefit, .module, .testimonial').forEach((element) => {
+        gsap.from(element, {
+          opacity: 0,
+          y: 18,
+          duration: 0.55,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 88%',
+            once: true
+          }
+        });
+      });
+    }
+  </script>
 </body>
 </html>
 
